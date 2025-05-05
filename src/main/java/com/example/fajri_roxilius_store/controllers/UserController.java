@@ -27,6 +27,11 @@ public class UserController {
     @Autowired
     private ProductRepository productRepository;
 
+    @GetMapping("/")
+    public String start() {
+        return "redirect:/home";
+    }
+
     @GetMapping("/home")
     public String home(Model x) {
         List<Product> products = productRepository.findAll();
